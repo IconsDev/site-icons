@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Icons Dev: Soluções digitais que impulsionam seu negócio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══ RESET ══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{background:#07070a;color:#f0f0f2;font-family:'Geist',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:rgba(37,99,235,.3);color:#f0f0f2}
+
+/* ══ DESIGN TOKENS (mantidos exatamente como no original) ══ */
+:root{
+  --bg:#07070a;
+  --bg2:#0d0d12;
+  --bg3:#111117;
+  --bg4:#16161d;
+  --bd:rgba(255,255,255,.06);
+  --bdh:rgba(255,255,255,.12);
+  --bda:rgba(37,99,235,.35);
+  --ac:#2563EB;
+  --ach:#3b74f5;
+  --acl:rgba(37,99,235,.12);
+  --tp:#f0f0f2;
+  --ts:rgba(240,240,242,.5);
+  --tm:rgba(240,240,242,.28);
+  --te:rgba(240,240,242,.14);
+  --fd:'Bricolage Grotesque',sans-serif;
+  --fb:'Geist',sans-serif;
+  --nav-h:64px;
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+  --r-xl:20px;
+  --shadow-ac:0 8px 32px rgba(37,99,235,.28);
+}
+
+.container{max-width:1120px;margin:0 auto;padding:0 40px}
+
+/* ══ NAVBAR ══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(7,7,10,.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--bd)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:15.5px;color:var(--tp);letter-spacing:-.025em}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{text-decoration:none;font-size:14px;font-weight:400;color:var(--ts);transition:color .2s}
+.nav-links a:hover{color:var(--tp)}
+.btn-nav{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;background:var(--ac);color:#fff;font-size:13.5px;font-weight:500;text-decoration:none;border-radius:var(--r-sm);transition:background .2s,transform .15s}
+.btn-nav:hover{background:var(--ach);transform:translateY(-1px)}
+@media(max-width:860px){.nav-links,.btn-nav{display:none}}
+
+/* ══ HERO ══ */
+#hero{min-height:92svh;display:flex;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden}
+.hero-glow-l{position:absolute;top:-5%;left:-10%;width:640px;height:640px;background:radial-gradient(circle,rgba(37,99,235,.13) 0%,transparent 60%);pointer-events:none}
+.hero-glow-r{position:absolute;bottom:0;right:-8%;width:520px;height:520px;background:radial-gradient(circle,rgba(37,99,235,.07) 0%,transparent 60%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:72px;width:100%;padding:60px 0}
+
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px 5px 9px;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.22);border-radius:100px;font-size:11px;font-weight:600;color:#60a5fa;letter-spacing:.08em;text-transform:uppercase;margin-bottom:28px}
+.badge-dot{width:5px;height:5px;border-radius:50%;background:#60a5fa;box-shadow:0 0 8px #60a5fa}
+
+.hero-title{font-family:var(--fd);font-size:clamp(44px,5.2vw,76px);font-weight:800;line-height:1.0;letter-spacing:-.045em;color:var(--tp);margin-bottom:22px}
+
+.hero-sub{font-size:17px;font-weight:300;color:var(--ts);line-height:1.75;max-width:440px;margin-bottom:48px}
+.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--ac);color:#fff;font-size:14.5px;font-weight:500;text-decoration:none;border-radius:var(--r-sm);transition:background .2s,transform .18s,box-shadow .2s}
+.btn-primary:hover{background:var(--ach);transform:translateY(-2px);box-shadow:var(--shadow-ac)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:transparent;color:var(--ts);font-size:14.5px;font-weight:400;text-decoration:none;border-radius:var(--r-sm);border:1px solid var(--bd);transition:border-color .2s,color .2s,background .2s}
+.btn-secondary:hover{border-color:var(--bdh);color:var(--tp);background:var(--bg3)}
+
+.hero-social{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.hero-social a{display:flex;align-items:center;gap:7px;text-decoration:none;font-size:13px;color:var(--tm);transition:color .2s}
+.hero-social a:hover{color:var(--ts)}
+
+.hero-right{display:flex;align-items:center;justify-content:center}
+.hero-panel{width:100%;max-width:440px;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r-xl);padding:8px}
+.hero-panel-row{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--bd)}
+.hero-panel-row:last-child{border-bottom:none}
+.hero-panel-row .label{font-size:14px;color:var(--ts);font-weight:300}
+.hero-panel-row .value{font-size:13px;color:var(--tp);font-weight:500;background:var(--bg3);padding:5px 12px;border-radius:100px;border:1px solid var(--bd)}
+
+/* ══ SECTION HELPERS ══ */
+.section-header{text-align:center;margin-bottom:80px}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:18px;display:block}
+.section-title{font-family:var(--fd);font-size:clamp(32px,4vw,54px);font-weight:700;line-height:1.06;letter-spacing:-.03em;color:var(--tp);margin-bottom:16px}
+.section-sub{font-size:16px;font-weight:300;color:var(--ts);line-height:1.75;max-width:460px;margin:0 auto}
+
+/* ══ SERVICES ══ */
+#servicos{padding:140px 0 120px}
+.servicos-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.servicos-grid{grid-template-columns:1fr}}
+.s-card{border:1px solid var(--bd);border-radius:var(--r-md);padding:36px;background:var(--bg2);position:relative;overflow:hidden}
+.s-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--ac),transparent 55%);opacity:.5}
+.s-tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:16px;display:inline-flex;align-items:center;gap:7px}
+.s-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ac)}
+.s-title{font-family:var(--fd);font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--tp);margin-bottom:12px}
+.s-desc{font-size:14.5px;font-weight:300;color:var(--ts);line-height:1.75;margin-bottom:20px}
+.s-link{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:var(--tp);text-decoration:none}
+.s-link:hover{color:var(--ac)}
+
+/* ══ DIFERENCIAIS ══ */
+#diferenciais{border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:120px 0}
+.dif-grid{display:grid;grid-template-columns:1fr 1fr 1fr}
+@media(max-width:860px){.dif-grid{grid-template-columns:1fr}}
+.dif-item{padding:48px 52px;border-right:1px solid var(--bd)}
+.dif-item:last-child{border-right:none}
+@media(max-width:860px){.dif-item{border-right:none;border-bottom:1px solid var(--bd)}.dif-item:last-child{border-bottom:none}}
+.dif-idx{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--te);display:block;margin-bottom:20px}
+.dif-title{font-family:var(--fd);font-size:19px;font-weight:700;letter-spacing:-.02em;color:var(--tp);margin-bottom:12px;line-height:1.3}
+.dif-desc{font-size:14px;font-weight:300;color:var(--ts);line-height:1.75}
+
+/* ══ CONTACT ══ */
+#contato{padding:140px 0}
+.cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+@media(max-width:900px){.cta-inner{grid-template-columns:1fr;gap:56px}}
+.cta-channels{display:flex;flex-direction:column;gap:14px}
+.channel-card{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r-md);text-decoration:none;transition:border-color .25s,transform .2s}
+.channel-card:hover{border-color:var(--bdh);transform:translateX(4px)}
+.channel-name{font-size:13.5px;font-weight:600;color:var(--tp);display:block;margin-bottom:2px}
+.channel-detail{font-size:12.5px;font-weight:300;color:var(--ts);display:block}
+
+.cta-right{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r-xl);padding:48px}
+.cta-right h3{font-family:var(--fd);font-size:22px;font-weight:700;letter-spacing:-.02em;color:var(--tp);margin-bottom:8px}
+.cta-right>p{font-size:14px;font-weight:300;color:var(--ts);line-height:1.7;margin-bottom:32px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:12.5px;font-weight:500;color:var(--ts);margin-bottom:8px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r-sm);color:var(--tp);font-family:var(--fb);font-size:14px;font-weight:300;outline:none}
+.form-group textarea{resize:vertical;min-height:96px}
+.btn-submit{width:100%;padding:14px;background:var(--ac);color:#fff;font-family:var(--fb);font-size:14.5px;font-weight:500;border:none;border-radius:var(--r-sm);cursor:pointer;transition:background .2s,transform .15s}
+.btn-submit:hover{background:var(--ach);transform:translateY(-1px)}
+
+/* ══ FOOTER ══ */
+footer{border-top:1px solid var(--bd);padding:56px 0 40px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12.5px;color:var(--tm);font-weight:300}
+.footer-desc{font-size:13.5px;font-weight:300;color:var(--tm)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">icons.dev</a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#diferenciais">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a class="btn-nav" href="https://wa.me/5571993808070">Fale conosco</a>
+</nav>
+
+<section id="hero">
+  <div class="hero-glow-l"></div>
+  <div class="hero-glow-r"></div>
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge"><span class="badge-dot"></span>Soluções digitais premium</div>
+      <h1 class="hero-title">Tecnologia que transforma seu negócio</h1>
+      <p class="hero-sub">Tecnologia que trabalha por você, 24 horas por dia. Criamos sites, aplicativos e sistemas personalizados que fortalecem sua marca, aumentam suas vendas e geram resultados reais para o seu negócio.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#contato">Fale com um especialista</a>
+        <a class="btn-secondary" href="#servicos">Nossos serviços</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://www.instagram.com/icons.dev/">Instagram</a>
+        <a href="https://wa.me/5571993808070">WhatsApp</a>
+        <a href="mailto:contato.iconsdev@gmail.com">E-mail</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-panel">
+        <div class="hero-panel-row"><span class="label">Sites institucionais</span><span class="value">Rápidos & responsivos</span></div>
+        <div class="hero-panel-row"><span class="label">Landing pages</span><span class="value">Foco em conversão</span></div>
+        <div class="hero-panel-row"><span class="label">Aplicativos</span><span class="value">Sob demanda</span></div>
+        <div class="hero-panel-row"><span class="label">Chatbots & IA</span><span class="value">Atendimento 24h</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Nossos Serviços</span>
+      <h2 class="section-title">Soluções completas para o seu negócio</h2>
+      <p class="section-sub">Do site institucional à inteligência artificial: construímos tudo que sua empresa precisa para crescer no digital.</p>
+    </div>
+    <div class="servicos-grid">
+      <div class="s-card">
+        <div class="s-tag">01 Desenvolvimento de Sites</div>
+        <h3 class="s-title">Sites institucionais que convertem.</h3>
+        <p class="s-desc">Sites institucionais, portais e sistemas web modernos, rápidos e responsivos. Cada detalhe pensado para transmitir autoridade e gerar confiança.</p>
+        <a class="s-link" href="#contato">Falar sobre este serviço →</a>
+      </div>
+      <div class="s-card">
+        <div class="s-tag">02 Landing Pages</div>
+        <h3 class="s-title">Páginas que transformam visitantes em clientes.</h3>
+        <p class="s-desc">Design orientado à conversão, copy estratégico e performance técnica de alto nível. Cada elemento com um propósito claro.</p>
+        <a class="s-link" href="#contato">Falar sobre este serviço →</a>
+      </div>
+      <div class="s-card">
+        <div class="s-tag">04 Aplicativos</div>
+        <h3 class="s-title">Aplicativos desenvolvidos sob demanda.</h3>
+        <p class="s-desc">Agregue valor à sua marca, desenvolva um aplicativo totalmente customizado.</p>
+        <a class="s-link" href="#contato">Falar sobre este serviço →</a>
+      </div>
+      <div class="s-card">
+        <div class="s-tag">05 Chatbots & Agentes de IA</div>
+        <h3 class="s-title">Atendimento inteligente 24 horas por dia.</h3>
+        <p class="s-desc">Sua empresa continua atendendo clientes mesmo quando você não está disponível. Nossa IA responde mensagens, esclarece dúvidas e mantém o contato ativo.</p>
+        <a class="s-link" href="#contato">Falar sobre este serviço →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="diferenciais">
+  <div class="container">
+    <div class="dif-grid">
+      <div class="dif-item">
+        <span class="dif-idx">01</span>
+        <h3 class="dif-title">Resultado, não apenas código.</h3>
+        <p class="dif-desc">Cada projeto começa com uma pergunta: qual o impacto real no seu negócio? Só então escrevemos a primeira linha.</p>
+      </div>
+      <div class="dif-item">
+        <span class="dif-idx">02</span>
+        <h3 class="dif-title">Qualidade sem burocracia.</h3>
+        <p class="dif-desc">Time enxuto, decisões rápidas e comunicação direta. Sem camadas entre você e quem constrói seu produto.</p>
+      </div>
+      <div class="dif-item">
+        <span class="dif-idx">03</span>
+        <h3 class="dif-title">Tecnologia de ponta, linguagem simples.</h3>
+        <p class="dif-desc">Aplicamos o que há de mais avançado em IA e software, e explicamos tudo de forma clara, sem jargão técnico.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container cta-inner">
+    <div>
+      <span class="section-label">Entre em contato</span>
+      <h2 class="section-title" style="text-align:left;font-size:clamp(28px,3.6vw,44px)">Vamos construir algo extraordinário.</h2>
+      <p class="section-sub" style="text-align:left;margin:16px 0 0">Fale com um especialista e descubra como a tecnologia certa pode transformar sua empresa.</p>
+      <div class="cta-channels" style="margin-top:32px">
+        <a class="channel-card" href="https://wa.me/5571993808070">
+          <div><span class="channel-name">WhatsApp</span><span class="channel-detail">+55 71 99380-8070</span></div>
+        </a>
+        <a class="channel-card" href="https://www.instagram.com/icons.dev/">
+          <div><span class="channel-name">Instagram</span><span class="channel-detail">@icons.dev</span></div>
+        </a>
+        <a class="channel-card" href="mailto:contato.iconsdev@gmail.com">
+          <div><span class="channel-name">E-mail</span><span class="channel-detail">contato.iconsdev@gmail.com</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="cta-right">
+      <h3>Envie uma mensagem</h3>
+      <p>Conte-nos sobre seu projeto e entraremos em contato em até 24 horas.</p>
+      <div class="form-group"><label for="nome">Nome</label><input id="nome" type="text"></div>
+      <div class="form-group"><label for="email">E-mail</label><input id="email" type="email"></div>
+      <div class="form-group">
+        <label for="servico">Serviço de interesse</label>
+        <select id="servico">
+          <option>Selecione um serviço</option>
+          <option>Aplicativos</option>
+          <option>Desenvolvimento de Sites</option>
+          <option>Landing Pages</option>
+          <option>Chatbots & Agentes de IA</option>
+          <option>Solução Personalizada</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="msg">Mensagem</label><textarea id="msg"></textarea></div>
+      <button class="btn-submit" type="submit">Enviar mensagem</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-bottom">
+    <span class="footer-desc">icons.dev: Soluções digitais que impulsionam seu negócio.</span>
+    <span class="footer-copy">© 2025 icons.dev. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+</body>
+</html>   
